@@ -1,0 +1,46 @@
+### **Explicação Detalhada do Código JavaScript**
+
+1. **`const form = document.getElementById('cadastroForm');`**  
+   Esta linha seleciona o formulário HTML com o ID `cadastroForm` e armazena-o na constante `form`. Isso permite que o código JavaScript acesse o formulário e manipule seus eventos e dados.
+
+2. **`const tabelaCorpo = document.getElementById('cadastroTableBody');`**  
+   Aqui, a constante `tabelaCorpo` armazena o elemento do corpo da tabela (a tag `<tbody>`) com o ID `cadastroTableBody`. Isso será usado para adicionar novas linhas com os dados dos usuários cadastrados.
+
+3. **`form.addEventListener('submit', function(event) {`**  
+   Esta linha adiciona um ouvinte de eventos ao formulário. O ouvinte detecta quando o formulário é enviado (`submit`) e executa a função fornecida. A função é chamada toda vez que o botão "Cadastrar" é clicado.
+
+4. **`event.preventDefault();`**  
+   Esta linha impede o comportamento padrão do navegador, que seria recarregar a página ao enviar o formulário. Assim, os dados podem ser processados sem recarregar a página.
+
+5. **`const nome = document.getElementById('nome').value;`**  
+   Esta linha obtém o valor digitado no campo de entrada de nome (`<input>` com ID `nome`) e armazena-o na constante `nome`. Isso permite coletar o texto que o usuário inseriu.
+
+6. **`const email = document.getElementById('email').value;`**  
+   Semelhante à linha anterior, esta linha coleta o valor digitado no campo de entrada de e-mail (`<input>` com ID `email`) e armazena-o na constante `email`.
+
+7. **`const novaLinha = document.createElement('tr');`**  
+   Esta linha cria um novo elemento de linha (`<tr>`) para ser adicionado à tabela. Esse elemento vai abrigar os dados do nome e e-mail do usuário.
+
+8. **`const celulaNome = document.createElement('td');`**  
+   Cria uma nova célula de tabela (`<td>`) para armazenar o nome do usuário. Este elemento será adicionado à linha criada anteriormente.
+
+9. **`celulaNome.textContent = nome;`**  
+   Define o texto da célula `celulaNome` como o valor armazenado na constante `nome`. Assim, o nome digitado pelo usuário será exibido na célula.
+
+10. **`const celulaEmail = document.createElement('td');`**  
+    Cria outra célula de tabela (`<td>`) para armazenar o e-mail do usuário.
+
+11. **`celulaEmail.textContent = email;`**  
+    Define o texto da célula `celulaEmail` como o valor armazenado na constante `email`, exibindo o e-mail digitado pelo usuário.
+
+12. **`novaLinha.appendChild(celulaNome);`**  
+    Adiciona a célula `celulaNome` à linha `novaLinha`, colocando o nome do usuário na nova linha da tabela.
+
+13. **`novaLinha.appendChild(celulaEmail);`**  
+    Adiciona a célula `celulaEmail` à linha `novaLinha`, posicionando o e-mail do usuário na mesma linha.
+
+14. **`tabelaCorpo.appendChild(novaLinha);`**  
+    Adiciona a `novaLinha` completa (com nome e e-mail) ao corpo da tabela (`tabelaCorpo`). Dessa forma, os dados inseridos pelo usuário aparecem na tabela na interface.
+
+15. **`form.reset();`**  
+    Esta linha limpa todos os campos de entrada no formulário, permitindo que o usuário insira novos dados sem precisar apagar manualmente as informações anteriores.
